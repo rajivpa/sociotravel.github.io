@@ -1,0 +1,12 @@
+{
+  "name": "Test2",
+  "app_id": "db3131b7",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

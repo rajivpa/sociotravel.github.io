@@ -1,0 +1,148 @@
+.bkImg{
+	background-image: url("../img/splash.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.loginCntr{
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	height: 100%;
+}
+
+.airlineCntr > .col > .airlineSel, 
+.itnrCntr > .col > .item-floating-label > .from{
+	padding-left: 0px;
+}
+.itnrCntr > .col > .item-floating-label > .to{
+	padding-right: 0px;
+}
+
+.itnrCntr > .col > .item-floating-label > .input-label, 
+.itnrCntr > .col > .item-floating-label > .input-cntr, 
+.airlineCntr > .col > .input-label,
+.flightDtTimeCntr > .col > .item-floating-label > .input-label{
+	width:100%;
+}
+
+.itnrCntr , .airlineCntr, .flightDtTimeCntr {
+	padding: 3px;
+}
+
+.itnrCntr > .col > .item-floating-label > .input-cntr{
+	border-bottom: 1px solid #ccc;
+	border-radius: 0;
+}
+
+.loginCntr > .headerspacer{
+	height: 75%;
+}
+
+.loginCntr > .emailLoginContr > .col > a{
+	font-size: 12px;
+}
+
+.flightNoLabel{
+	padding-bottom: 0px;
+	padding-top:0px;
+}
+
+#flightNo{
+	height: 30px;
+}
+.airlineSel > .item-select select{
+	max-width: 100%;
+	padding-left: 0px;
+	width: 100%;
+	direction : ltr;
+}
+.airlineCntr > .col > .item-select, 
+.airlineCntr > .col > .item-floating-label >  .item-input{
+	border:0px;
+	padding-left:0px;
+}
+.flightDtTimeCntr > .col >  .item-floating-label >.item-input{
+	border:0px;
+	padding:0px;
+}
+.airlineCntr > .col > .item-select select,
+.airlineCntr > .col > .item-floating-label > .item-input input,
+.flightDtTimeCntr > .col > .item-floating-label > .item-input input{
+	border-bottom : 1px solid #ccc;
+	border-radius: 0;
+
+}
+.travlType {
+
+	padding: 0px;
+}
+.travlType > .col > .item{
+	border: 0px;
+	padding-left: 40px;
+	font-size: 14px;
+}
+
+.flightPref > .item > .radio-content > .item-content{
+	font-size: 14px;
+
+}
+
+.travlType > .col > .item > .checkbox{
+	left: -7px;
+	
+}
+.summaryCard{
+	margin-top: 10px;
+}
+.input-label{
+	color: #387ef5;
+}
+#sepList > .item-divider{
+	padding-bottom:0px;
+	padding-top: 5px;
+}
+#sepList > .item-body{
+	padding-bottom:3px;
+	padding-top: 0px;
+}
+
+
+#testLab 
+{
+	position: relative;
+    padding: 5px 0 0 0;
+    opacity: 0;
+    top: 10px;
+    -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
+    transition: opacity 0.15s ease-in, top 0.2s linear;
+}
+#testLab.on 
+{
+  color: #4481C4;
+}
+#testLab.show 
+{
+	opacity: 1;
+    top: 0;
+    -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
+    transition: opacity 0.15s ease-in, top 0.2s linear;
+ 
+}
+
+
+.dateclass{
+    width:100%;
+}
+
+.dateclass.placeholderclass::before{
+    width:100%;
+    content:attr(placeholder);
+    color:#aaa;
+    background-color:#FFFFFF;
+}
+
+.dateclass.placeholderclass:hover::before{
+    width:0%;
+    content:"";
+}

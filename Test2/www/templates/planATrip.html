@@ -1,0 +1,80 @@
+<ion-view hide-back-button="false" title="Itenary" id="page8">
+    <ion-content scroll="false" padding="true" class="has-header">
+        <div class="row itnrCntr">
+            <div class="col text-left from">
+                <label class="item-floating-label">
+                    <span class="input-label">Origin</span>
+                    <input class="input-cntr placepicker" type="text" placeholder="Origin">
+                </label>
+            </div>
+            <div class="col text-left to">
+                <label class="item-floating-label">
+                    <span class="input-label">Destination</span>
+                    <input class="input-cntr placepicker" type="text" placeholder="Destination">
+                </label>
+            </div>
+            <!--<div  id="toCityCntr" class="col text-left to">
+                <label class="item-floating-label">
+                <span class="input-label">To City</span>
+                <input  class="input-cntr" type="text" placeholder="To City">
+                </label>
+            </div>-->
+        </div>
+        <div class="spacer" style="height: 8px;"></div>
+        <div class="row airlineCntr">
+            <div class="col airlineSel">
+                <span id="testLab" for="airlines" class="input-label">Airlines</span>
+                <label class="item item-select" name="airlines" placeholder="Airlines">
+                    <select id="testsel" name="AirlinesSel">
+                        <option value="airlines" selected="selected">Airlines</option>
+                        <option>Jet Airways</option>
+                        <option>Indigo</option>
+                        <option>Air India</option>
+                        <option>Spice Jet</option>
+                        <option>Vistara</option>
+                    </select>
+                </label>
+            </div>
+            <div class="col ">
+                <label class="item-floating-label">
+                    <span class="input-label ">FlightNo</span>
+                    <label class="item item-input flightNoLabel">
+                        <input id="flightNo" type="text" placeholder="FlightNo">
+                    </label>
+                </label>
+            </div>
+        </div>
+        <div class="spacer" style="height: 8px;"></div>
+        <div class="row flightDtTimeCntr">
+            <div class="col ">
+                <label class="item-floating-label">
+                    <span class="input-label">Flight Date</span>
+                    <label class="item item-input">
+                        <input id="flightDate" type="date" placeholder="Flight Date" onClick="$(this).removeClass('placeholderclass')" class="dateclass placeholderclass">
+                    </label>
+                </label>
+            </div>
+            <div class="col ">
+                <label class="item-floating-label">
+                    <span class="input-label ">Flight Time</span>
+                    <label class="item item-input ">
+                        <input type="time" placeholder="Flight Time" onClick="$(this).removeClass('placeholderclass')" class="dateclass placeholderclass">
+                    </label>
+                </label>
+            </div>
+        </div>
+        <div class="spacer" style="height: 8px;"></div>
+        <div class="row flightDtTimeCntr">
+            <div class="col ">
+                <label class="item-floating-label">
+                    <span class="input-label ">PNR No</span>
+                    <label class="item item-input ">
+                        <input type="text" placeholder="PNR No">
+                    </label>
+                </label>
+            </div>
+        </div>
+        <div class="spacer" style="height: 8px;"></div>
+        <a ui-sref="menu.planATrip2" class="button button-positive button-standard button-block">Continue</a>
+    </ion-content>
+</ion-view>
