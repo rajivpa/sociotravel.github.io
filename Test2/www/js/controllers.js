@@ -1,5 +1,12 @@
 angular.module('app.controllers', [])
-  
+  .controller('AppCtrl', ['$scope', '$rootScope', '$state', '$stateParams', function($scope, $rootScope, $state, $stateParams) {
+
+      $rootScope.$on('$stateChangeSuccess', function(evt, toState, toParams, fromState, fromParams) {
+        console.log(toState);
+      });
+
+    }])
+
 .controller('tripsCtrl', ['$scope','TripsFactory','Loader',
     function($scope,TripsFactory,Loader) {
 	$scope.upcomingTrips = []
@@ -9,6 +16,11 @@ angular.module('app.controllers', [])
 		{"from":"Delhi", "to":"Bangalore", "airlines":"Spice Jet", "flightNo":"SJ2278","departureDate":"25-June-2016","departureTime":"10:25am"},
 		{"from":"Delhi", "to":"Bangalore", "airlines":"Spice Jet", "flightNo":"SJ2278","departureDate":"25-June-2016","departureTime":"10:25am"}
 	];*/
+
+   // {"from":"Delhi", "to":"Pune", "travelDate":"29-May-2016","invitesSent":"","invitesRecvd":"","buddyName":""}
+
+// {"from":"Delhi", "to":"Pune", "travelDate":"29-May-2016","rating":"","invitesSent":"","invitesRecvd":"","buddyName":""}
+
 
     Loader.showLoading();
 
@@ -25,8 +37,50 @@ angular.module('app.controllers', [])
    
 .controller('findABuddyCtrl', function($scope) {
 
+    /*registeredPersonId, fromCity, toCity, travelMood, travelDate*/
+   
+    $scope.showSearchByTrip=false;
+
+    $scope.showSearchPg= function(id){
+        if(id=="free")
+            $scope.showSearchByTrip=false;            
+        else if(id=="trip")
+            $scope.showSearchByTrip=true;
+    
+    }
 })
       
+.controller('searchByTripCtrl',function($scope){
+    jQuery(function(){
+    var onClass = 'on';
+    var showClass = 'show';
+    jQuery('#upcTrpSel').bind('checkval', function () {
+        var label = jQuery('#selUpcTripLab');
+        //console.log(this.value);
+        if (this.value !== 'selurtrip')
+            jQuery('#selUpcTripLab').addClass(showClass);
+        else
+            jQuery('#selUpcTripLab').removeClass(showClass);
+    }).on("focus", function () 
+    {
+      jQuery('#selUpcTripLab').addClass(onClass);
+    });
+    jQuery('#upcTrpSel').on('change', function () {
+        var jQuerythis = jQuery(this);
+     //   console.log(jQuery(this));
+        if (jQuerythis.val() == 'selurtrip')
+            jQuerythis.addClass('watermark');
+        else
+            jQuerythis.removeClass('watermark');
+        jQuerythis.trigger('checkval');
+    }).change();
+    });
+})
+
+.controller('freeSearchCtrl',function($scope){
+  $scope.freeSearchFilter  = {'prefDesired':false}
+})
+
 .controller('invitesCtrl', function($scope) {
 
 })
@@ -40,7 +94,13 @@ angular.module('app.controllers', [])
 })
    
 .controller('planATripCtrl', function($scope) {
-	jQuery(function(){
+	
+/*registeredPersonId, fromCity, toCity, travelDate, travelMood*/
+
+    $scope.tripData={};
+    
+
+    jQuery(function(){
     var onClass = 'on';
     var showClass = 'show';
     jQuery('#testsel').bind('checkval', function () {

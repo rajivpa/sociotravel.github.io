@@ -23,7 +23,31 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/findABuddy.html',
-        controller: 'findABuddyCtrl'
+        controller: 'findABuddyCtrl',
+
+      }
+    }
+  })
+
+  .state('menu.findABuddy.searchByTrip', {
+    url: '/searchByTrip',
+    views: {
+      'tab-searchByTrip': {
+        templateUrl: 'templates/searchByTrip.html',
+        controller: 'searchByTripCtrl',
+         
+      }
+    }
+  })
+
+  .state('menu.findABuddy.freeSearch', {
+    url: '/freeSearch',
+
+    views: {
+      'tab-freeSearch': {
+        templateUrl: 'templates/freeSearch.html',
+        controller: 'freeSearchCtrl',
+
       }
     }
   })
@@ -79,7 +103,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/planATrip2.html',
-        controller: 'planATrip2Ctrl'
+        controller: 'planATripCtrl'
       }
     }
   })
@@ -89,7 +113,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/planATrip3.html',
-        controller: 'planATrip3Ctrl'
+        controller: 'planATripCtrl'
       }
     }
   })

@@ -1,0 +1,62 @@
+<ion-view hide-back-button="false" title="Find A Buddy" id="freeSearch">
+    <ion-content padding="true" class="has-header">
+        <div class="spacer" style="height: 16px;"></div>
+        <div class="row itnrCntr">
+            <div class="col text-left from">
+                <label class="item-floating-label">
+                    <span class="input-label">Origin</span>
+                    <input class="input-cntr placepicker" type="text" placeholder="Origin">
+                </label>
+            </div>
+            <div class="col text-left to">
+                <label class="item-floating-label">
+                    <span class="input-label">Destination</span>
+                    <input class="input-cntr placepicker" type="text" placeholder="Destination">
+                </label>
+            </div>
+        </div>
+         <div class="spacer" style="height: 8px"></div>
+        <div class="row flightDtTimeCntr">
+            <div class="col ">
+                <label class="item-floating-label">
+                    <span class="input-label">Flight Date</span>
+                    <label class="item item-input">
+                        <input id="flightDate" type="date" placeholder="Flight Date" onClick="$(this).removeClass('placeholderclass')" class="dateclass placeholderclass">
+                    </label>
+                </label>
+            </div>
+        </div>
+        <div class="spacer" style="height: 16px;"></div>
+        <div class="row airlineCntr">
+            <div id="prefRow" class="col">
+                <span style="color:#000000;font-weight:400;">CoPassenger Preferences ?
+                </span>
+                <label class="toggle toggle-calm">
+                    <input type="checkbox" ng-model="freeSearchFilter.prefDesired">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+        </div>
+         
+        <div class="row airlineCntr" ng-show="freeSearchFilter.prefDesired">
+            <div class="col">
+                <div class="spacer" style="height: 8px"></div>
+                <form class="list flightPref">
+                    <ion-radio>Light Chit Chat</ion-radio>
+                    <ion-radio>Socializing</ion-radio>
+                    <ion-radio>Do not disturb</ion-radio>
+                </form>
+
+        
+            </div>
+            
+        </div>
+        <div  class="row airlineCntr">
+            <div  class="col srchBtnCntr">
+                <a class="button button-calm button-standard button-block">Search</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
