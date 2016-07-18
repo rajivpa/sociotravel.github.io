@@ -40,6 +40,10 @@
 	height: 75%;
 }
 
+.loginCntr > .landingspacer{
+	height: 60%;
+}
+
 .loginCntr > .emailLoginContr > .col > a{
 	font-size: 12px;
 }
@@ -104,8 +108,15 @@
 	padding-top: 5px;
 }
 #sepList > .item-body{
-	padding-bottom:3px;
-	padding-top: 0px;
+	padding-right: 3px;
+	padding-left: 8px;
+}
+#sepList > .item-body > .row {
+	padding-right: 0px;
+}
+
+#sepList > .item-body > .row > .col{
+	padding-right: 0px;
 }
 
 
@@ -161,4 +172,69 @@
 .srchBtnCntr{
 	padding-left: 0px;
 	padding-right:0px;
+}
+.landingBtnPane .button {
+  font-size: 10px;
+  line-height: 20px; // Add
+}
+.landingBtnPane .button-icon .icon {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 3px !important;
+
+}
+
+#planATrip3-heading5{
+	margin-top:0px;
+}
+.srchBtnCtr{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+#trips-button4{
+	margin-bottom: 2px;
+}
+.tripListItem .item-content{
+	padding:5px;
+}
+.invitesBadge{
+	margin-left:10px;
+	padding: 2px;
+	color:white;
+	height:30px;
+	width:30px;
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	background-color:#4680E3;
+}
+.invitesSent{
+	margin-left:20px;
+	
+}
+.item-avatar-right img{
+  float:right;
+  max-width: 100px;
+  max-height: 100px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
+
+
+
+.item-avatar-right > img:first-child, .item-avatar-right .item-image, .item-avatar-right .item-content > img:first-child, .item-avatar-right .item-content .item-image{
+  position: inital !important;
 }

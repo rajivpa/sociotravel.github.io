@@ -4,10 +4,10 @@
             <ion-nav-buttons side="left">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
-             <ion-nav-back-button class="button-clear">
-    <i class="ion-chevron-left"></i> &nbsp;
-  </ion-nav-back-button>
-           
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-chevron-left"></i> &nbsp;
+            </ion-nav-back-button>
+            
         </ion-nav-bar>
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
@@ -17,8 +17,11 @@
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
-                <ion-item class="item-icon-right" ui-sref="menu.trips" menu-close="">Trips
+                <ion-item class="item-icon-right" ui-sref="menu.webCheckIn" menu-close="">Web Check In
                     <i class="icon ion-plane"></i>
+                </ion-item>
+                <ion-item class="item-icon-right" ui-sref="menu.trips" menu-close="">Trips
+                    <i class="icon ion-briefcase"></i>
                 </ion-item>
                 <ion-item class="item-icon-right">Trip Buddies
                     <i class="icon ion-android-people"></i>
@@ -38,7 +41,7 @@
                 <ion-item class="item-icon-right" ui-sref="menu.profile" menu-close="">Profile
                     <i class="icon ion-android-settings"></i>
                 </ion-item>
-                <ion-item class="item-icon-right" ui-sref="login" menu-close="logout()">Logout
+                <ion-item class="item-icon-right" ui-sref="landingHome" menu-close="logout()">Logout
                     <i class="icon ion-power"></i>
                 </ion-item>
                 

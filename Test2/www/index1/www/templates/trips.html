@@ -1,0 +1,60 @@
+<ion-view hide-back-button="false" title="Trips" id="page2">
+    
+    <ion-content id="tripsContent" scroll="false" padding="true" class=" has-header">
+        <div class="button-bar">
+            <button id="trips-button1" class="button button-calm button-small button-block">Upcoming Trips</button>
+            <button id="trips-button2" class="button button-calm button-small button-block button-outline">Past Trips</button>
+        </div>
+      <div class="row" ng-show="{{true}}">
+        <div class="col">
+        <button class="button button-small button-icon icon ion-ios-minus-outline"
+          ng-click="shouldShowDelete = !shouldShowDelete;"></button>
+        </div>
+        <div class="col button-small text-right">
+        <button ui-sref="menu.planATrip" class="button button-icon icon ion-ios-plus-outline" >
+        </button>
+        </div>
+      </div>
+      
+<ion-scroll direction="y" style="height:{{scrollHeight}}">
+        <ion-list 
+          show-delete="shouldShowDelete"
+          can-swipe="listCanSwipe">
+
+  <ion-item ng-show="{{upcomingTrips.length>0}}" collection-repeat="upcomingTrip in upcomingTrips"
+            class="item" >
+
+    <div class="row">
+    <div class="col">        
+    <h2>{{upcomingTrip.from}} To {{upcomingTrip.to}}</h2>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col">
+    <p>{{upcomingTrip.travelDate}}</p>
+    </div>
+    <div class="col">
+    <p>Invites Recvd {{upcomingTrip.invitesRecvd}}</p>
+    <p>Invites Sent {{upcomingTrip.invitesSent}}</p>
+    </div>
+    </div>    
+    <ion-option-button class="button-info"
+                       ng-click="share(item)">
+      Edit
+    </ion-option-button>
+    
+    <ion-delete-button class="ion-minus-circled"
+                       ng-click="items.splice($index, 1)">
+    </ion-delete-button>
+
+    </ion-reorder-button>
+
+  </ion-item>
+</ion-list>
+</ion-scroll>
+        <div class="spacer" ng-show="{{upcomingTrips.length==0}}" style=" height: {{spacerHeight}};" ></div>
+        <h4 id="trips-heading1" style="color:#000000;text-align:center;" ng-show="{{upcomingTrips.length==0}}">No Upcoming Trips Yet</h4>
+        <div class="spacer" ng-show="{{upcomingTrips.length==0}}" style=" height: {{spacerHeight}}" ></div>
+        <a ng-show="{{upcomingTrips.length==0}}" ui-sref="menu.planATrip" id="trips-button4" class="button button-calm button-standard button-block">Plan A Trip</a>
+    </ion-content>
+</ion-view>

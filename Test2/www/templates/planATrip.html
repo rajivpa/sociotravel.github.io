@@ -1,6 +1,6 @@
-<ion-view hide-back-button="false" title="Itenary" id="page8">
-    <ion-content padding="true" class="has-header">
-        <div class="row itnrCntr">
+<ion-view hide-back-button="false" title="Plan A Trip" id="page8">
+    <ion-content padding="true" scroll="false" class="has-header">
+        <div class="row itnrCntr" style="height: 11%">
             <div class="col text-left from">
                 <label class="item-floating-label">
                     <span class="input-label">Origin</span>
@@ -14,8 +14,8 @@
                 </label>
             </div>
         </div>
-        <div class="spacer" style="height: 8px;"></div>
-        <div class="row airlineCntr">
+        <div class="spacer" style="height: 10%"></div>
+        <div class="row airlineCntr" style="height: 11%">
             <div class="col airlineSel">
                 <span id="testLab" for="airlines" class="input-label">Airlines</span>
                 <label class="item item-select" name="airlines" placeholder="Airlines">
@@ -38,8 +38,9 @@
                 </label>
             </div>
         </div>
-        <div class="spacer" style="height: 8px;"></div>
-        <div class="row flightDtTimeCntr">
+        <div class="spacer" style="height: 10%"></div>
+         
+        <div class="row flightDtTimeCntr" style="height: 11%">
             <div class="col ">
                 <label class="item-floating-label">
                     <span class="input-label">Flight Date</span>
@@ -57,8 +58,8 @@
                 </label>
             </div>
         </div>
-        <div class="spacer" style="height: 8px;"></div>
-        <div class="row flightDtTimeCntr">
+        <div class="spacer" style="height: 10%"></div>
+        <div class="row flightDtTimeCntr" style="height: 11%">
             <div class="col ">
                 <label class="item-floating-label">
                     <span class="input-label ">PNR No</span>
@@ -68,7 +69,11 @@
                 </label>
             </div>
         </div>
-        <div class="spacer" style="height: 8px;"></div>
-        <a ui-sref="menu.planATrip2" class="button button-calm button-standard button-block">Continue</a>
+        <div class="spacer" style="height: 10%"></div>
+        <div class="row airlineCntr" style="height: 11%">
+            <div class="col srchBtnCtr">
+            <a ui-sref="menu.planATrip3" class="button button-calm button-standard button-block">Add Trip</a>
+            </div>
+        </div>
     </ion-content>
 </ion-view>
