@@ -29,8 +29,14 @@ angular.module('app.services', [])
 
 	var API = {
 	get: function(tripType) {
-		//return $http.get(base + '/travelBuddy/api/v1/upcomingTrips/');
 		return $http.get(base + '/'+tripType,{timeout:500});
+
+		/*if(tripType=='upcomingTrips')
+			return $http.get('http://www.mocky.io/v2/5791813011000021145af599',{timeout:1000});
+		//return $http.get(base + '/'+tripType,{timeout:500});
+		else
+			return $http.get('http://www.mocky.io/v2/57918f43110000b3155af5a0',{timeout:1000});
+		*/
 	}
 	};
 	return API;

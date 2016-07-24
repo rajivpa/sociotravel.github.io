@@ -12,7 +12,7 @@ angular.module('app.controllers', ['ionic.rating'])
   function($scope,TripsFactory,Loader) {
     $scope.noUpcomingTripMsg="No Upcoming Trips Yet";
     $scope.noPastTripMsg="No Past Trips found"
-    $scope.activeTripType='upcoming';
+    $scope.activeTripType='past';
     $scope.pastTripsExists={status:false};
     //upcoming trips array
     $scope.upcomingTrips=[];
@@ -108,7 +108,7 @@ angular.module('app.controllers', ['ionic.rating'])
 
     //By Default loadthe upcoming trips 
     Loader.showLoading();
-    $scope.loadUpcomingTrips(); 
+    $scope.loadPastTrips(); 
     
   }])
 

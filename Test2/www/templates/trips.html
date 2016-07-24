@@ -79,27 +79,25 @@
 					<ion-item class="tripListItem  item-remove-animated item-avatar-right item-complex" collection-repeat="pastTrip in pastTrips"  >
 						
 						<div class="row" >
-							<div class="col" style="padding-left:0">	
-								<h2>{{pastTrip.from}}<span style="margin-left:10px;margin-right:10px" class="icon ion-arrow-right-c"></span>{{pastTrip.to}}</h2>
+								<h2>{{pastTrip.from}}<span style="margin-left:10px;margin-right:10px" class="icon ion-arrow-right-c"></span>{{pastTrip.to}},</h2>
+							</div>
+							<div class="col-60" style="padding-left:0;padding-top:10px">	
+								<p>{{pastTrip.travelDate}}</p>
 							</div>
 						</div>		
+
 						<div class="row" >
-							<div class="col-33" style="padding-left:0">
-								<p style="margin-bottom:10px">{{pastTrip.travelDate}}</p>
+							
+							<div class="col" style="padding-left:0px;padding-top:10px">
 								
+										<h4 style="padding-bottom:10px">Trip Buddy : <span style="font-weight:bold;" >{{pastTrip.buddyName}}</span></h4>
+										<img src="img/{{pastTrip.buddyAvatar}}"  alt="" />
 							</div>
-							<div class="col-67 " style="padding-left:40px">
-								
-										
-										<h4>Buddy  <span style="font-weight:bold;" >{{pastTrip.buddyName}}</span></h4>
-										
-	
-								</div>
-								
+									
 						</div>	
 					
-						<img src="img/{{pastTrip.buddyAvatar}}" alt="" />
-							
+						
+						
 					</ion-item>
 				</ion-list>
 			</ion-scroll>
