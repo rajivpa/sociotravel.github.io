@@ -7,7 +7,7 @@
                 <i class="ion-chevron-left"></i> &nbsp;
             </ion-nav-back-button>
 		<ion-nav-buttons side="right">
-			<button ng-show="upcomingTripsExists.status" class="button button-small button-icon icon ion-ios-minus-outline assertive"
+			<button ng-show="isActive('upcoming') && upcomingTripsExists.status" class="button button-small button-icon icon ion-ios-minus-outline assertive"
 			ng-click="setShowDelete()"></button>
 			<button ui-sref="menu.planATrip" class="button button-small button-icon icon ion-ios-plus-outline assertive" >
 			</button>
@@ -79,6 +79,7 @@
 					<ion-item class="tripListItem  item-remove-animated item-avatar-right item-complex" collection-repeat="pastTrip in pastTrips"  >
 						
 						<div class="row" >
+							<div class="col-40" style="padding-left:0;padding-top:10px">	
 								<h2>{{pastTrip.from}}<span style="margin-left:10px;margin-right:10px" class="icon ion-arrow-right-c"></span>{{pastTrip.to}},</h2>
 							</div>
 							<div class="col-60" style="padding-left:0;padding-top:10px">	
