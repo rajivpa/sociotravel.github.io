@@ -119,12 +119,22 @@ angular.module('app.routes', [])
     }
   })
 
+  /*.state('menu.single', {
+    url: "/trips/:tripId",
+    views: {
+      'side-menu21': {
+        templateUrl: "templates/planATrip3.html",
+        controller: 'tripsCtrl'
+      }
+    }
+  })*/
+
   .state('menu.planATrip3', {
     url: '/page10',
     views: {
       'side-menu21': {
         templateUrl: 'templates/planATrip3.html',
-        controller: 'planATripCtrl'
+        controller: 'tripDetailCtrl'
       }
     }
   })
@@ -147,6 +157,17 @@ angular.module('app.routes', [])
       }
     }
   })
+
+.state('menu.landingHome', {
+  url: '/page20',
+  views: {
+    'side-menu21':{
+      templateUrl: 'templates/landingHome.html',
+      controller: 'signupCtrl'
+    }
+  }
+})
+
   .state('messages', {
     url: '/page12',
     templateUrl: 'templates/messages.html',
@@ -158,14 +179,8 @@ angular.module('app.routes', [])
     templateUrl: 'templates/signup.html',
     controller: 'signupCtrl'
   })
-.state('landingHome', {
-    url: '/page20',
-    templateUrl: 'templates/landingHome.html',
-    controller: 'signupCtrl'
-  })
 
-
-$urlRouterProvider.otherwise('/page20')
+$urlRouterProvider.otherwise('side-menu21/page20')
 
   
 

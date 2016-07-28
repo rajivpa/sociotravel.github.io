@@ -1,4 +1,4 @@
-<ion-view hide-back-button="false" title="Trips" id="page2" cache-view="false">	
+<ion-view hide-back-button="false" title="Trips" id="page2" >	
 	<ion-nav-bar class="bar-stable">
 		<ion-nav-buttons side="left">
 			<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
@@ -20,19 +20,10 @@
 		</div>
 		<div id="upcomingTrips" ng-show="isActive('upcoming')">
 			<div class="spacer" ng-show="upcomingTripsExists.status" style="height: 25px;"></div>
-			<!--<div class="row" ng-show="upcomingTripsExists.status">
-				<div class="col">
-					<button class="button button-small button-icon icon ion-ios-minus-outline assertive"
-					ng-click="shouldShowDelete = !shouldShowDelete;"></button>
-				</div>
-				<div class="col text-right">
-					<button ui-sref="menu.planATrip" class="button button-small button-icon icon ion-ios-plus-outline assertive" >
-					</button>
-				</div>
-			</div>-->
+			
 			<ion-scroll direction="y" style="height:{{scrollHeight}}" >
 				<ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe" >
-					<ion-item class="tripListItem" collection-repeat="upcomingTrip in upcomingTrips" class="item" >
+					<ion-item class="tripListItem" collection-repeat="upcomingTrip in upcomingTrips" class="item" ui-sref="menu.planATrip3">
 						
 						<div class="row" >
 							<div class="col" style="padding-left:0">	
@@ -89,12 +80,25 @@
 
 						<div class="row" >
 							
-							<div class="col" style="padding-left:0px;padding-top:10px">
+							<div class="col-40" style="padding-left:0px;padding-top:10px;">
 								
 										<h4 style="padding-bottom:10px">Trip Buddy : <span style="font-weight:bold;" >{{pastTrip.buddyName}}</span></h4>
 										<img src="img/{{pastTrip.buddyAvatar}}"  alt="" />
 							</div>
-									
+							<div class="col-60" style="padding-left:0px;padding-top:10px">
+								<div class="row">
+									<div class="col" >
+										<h4><b>Rating received</b></h4>
+										<rating ng-model="pastTrip.ratingRecvd" max="5"></rating>
+									</div>
+								</div>
+								<div class="row" >
+									<div class="col" >
+										<h4><b>Comments</b></h4>
+										<span style="display:flex"><h4 id="commentText">{{pastTrip.commentRecvd}}</h4></span>
+									</div>
+								</div>		
+							</div>		
 						</div>	
 					
 						

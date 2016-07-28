@@ -11,26 +11,23 @@
         </ion-nav-bar>
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left" id="side-menu21">
+    <ion-side-menu side="left" id="side-menu21" expose-aside-when="large">
         <ion-header-bar class="bar-stable">
             <div class="title">Menu</div>
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
+                <ion-item class="item-icon-right" ui-sref="menu.landingHome" menu-close="">Home
+                    <i class="icon ion-home"></i>
+                </ion-item>
                 <ion-item class="item-icon-right" ui-sref="menu.webCheckIn" menu-close="">Web Check In
                     <i class="icon ion-plane"></i>
                 </ion-item>
                 <ion-item class="item-icon-right" ui-sref="menu.trips" menu-close="">Trips
                     <i class="icon ion-briefcase"></i>
                 </ion-item>
-                <ion-item class="item-icon-right">Trip Buddies
-                    <i class="icon ion-android-people"></i>
-                </ion-item>
                 <ion-item class="item-icon-right" ui-sref="menu.findABuddy" menu-close="">Find A Buddy
                     <i class="icon ion-search"></i>
-                </ion-item>
-                <ion-item class="item-icon-right" ui-sref="menu.invites" menu-close="">Invites
-                    <i class="icon ion-android-person-add"></i>
                 </ion-item>
                 <ion-item class="item-icon-right">Messages
                     <i class="icon ion-email"></i>
@@ -41,7 +38,7 @@
                 <ion-item class="item-icon-right" ui-sref="menu.profile" menu-close="">Profile
                     <i class="icon ion-android-settings"></i>
                 </ion-item>
-                <ion-item class="item-icon-right" ui-sref="landingHome" menu-close="logout()">Logout
+                <ion-item class="item-icon-right" ui-sref="menu.landingHome" menu-close="logout()">Logout
                     <i class="icon ion-power"></i>
                 </ion-item>
                 

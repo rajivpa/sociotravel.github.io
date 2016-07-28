@@ -239,3 +239,21 @@
 .item-avatar-right > img:first-child, .item-avatar-right .item-image, .item-avatar-right .item-content > img:first-child, .item-avatar-right .item-content .item-image{
   position: inital !important;
 }
+
+#commentText,#msgText{
+	white-space: pre-wrap;
+	overflow:visible;
+ -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-style: italic;
+}
+
+#landingNavBar .nav-bar-block ion-header-bar {
+	border-color: #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+#inviteRecvdBtn{
+	padding-left: 10px;
+	padding-right:10px;
+}

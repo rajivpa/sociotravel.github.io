@@ -1,23 +1,168 @@
 <ion-view hide-back-button="false" title="Trip Summary" id="page10">
     <ion-content padding="false" scroll="false" class="has-header">
         <div style="height: 100%;">
-        <div class="list card summaryCard" style="height: 42%">
-            <div class="item item-divider">Delhi to Pune</div>
-            <div class="item item-body">
-                <h3 id="planATrip3-heading5" style="color:#000000;">Jet Airways 9W 228</h3>
-                <h3 id="planATrip3-heading8" style="color:#000000;">29th-May-2016, 9:30am</h3>
-                <h3 id="planATrip3-heading11" style="color:#000000;">Robotics &amp; AI Event</h3>
-                <h3 id="planATrip3-heading10" style="color:#000000;">Would like to Socialize</h3>
+            <div class="row " >
+                <div class="col" style="padding-top:10px;font-size:16px;font-weight:bold">    
+                    {{tripDetails.from}}<span style="margin-left:10px;margin-right:10px" class="icon ion-arrow-right-c"></span>{{tripDetails.to}}
+                </div>
+            </div>
+            <div class="row">
+               <div class="col" style="padding-top:10px">    
+                {{tripDetails.airlines}}, {{tripDetails.flightNo}}                
+            </div>
+        </div>
+        <div class="row " >
+            <div class="col" style="padding-top:10px">    
+
+                {{tripDetails.travelDate}}, {{tripDetails.flightTime}} hrs
             </div>
         </div>
         <div class="spacer" style="height: 6%;"></div>
-         <div  class="row airlineCntr" style="height: 30%;">
-            <div  class="col " >
-                <a  class="button button-calm button-standard button-block">Web Check In</a>
-                <a ui-sref="menu.buddySearchResults" class="button button-calm button-standard button-block">Find Buddy</a>
-                <a  ui-sref="menu.trips" class="button button-calm button-standard button-block">Come back later</a>
+        <div class="button-bar"  style="padding-left:3px;padding-right:3px;">
+            <button id="matchesBtn" ng-class="{'button-outline': !isActive('matchingProfiles')}" class="button button-calm button-small button-block" ng-click="setActive('matchingProfiles') "> Matches</button>
+            <button id="inviteRecvdBtn" ng-class="{'button-outline': !isActive('interestsRecvd')}" class="button button-calm button-small button-block" ng-click="setActive('interestsRecvd') ">Invites Recvd</button>
+         <button id="iniviteSentBtn" ng-class="{'button-outline': !isActive('interestsSent')}" class="button button-calm button-small button-block" ng-click="setActive('interestsSent') ">Invites Sent</button>
+
         </div>
-        </div>
-        </div>
-    </ion-content>
+        <div style="padding-left:5px;padding-right:5px" id="matchingBuddies" ng-show="isActive('matchingProfiles')">
+            <ion-scroll direction="y" style="height:{{scrollHeight}}" >
+                <ion-list  >
+                    <ion-item class="tripListItem  item-remove-animated item-avatar-right item-complex" collection-repeat="traveller in travellerMatches"  >
+                        
+                        
+                        <div class="row" >
+                            
+                            <div class="col-40" style="padding-top:5px;padding-bottom:10px">
+                                <div class="row">
+                                    <div class="col" >
+                                        <h4 style="padding-bottom:10px">Name: <span style="font-weight:bold;" >{{traveller.name}}</span></h4>
+                                        <img src="img/{{traveller.buddyAvatar}}"  alt="" />
+                                     </div>
+                                     </div>   
+                                    <div class="row">
+                                    <div class="col" >
+                                        <rating ng-model="traveller.avgRating" max="5"></rating>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-60" style="padding-left:0px;padding-top:5px;padding-bottom:10px">
+                                
+                                <div class="row" >
+                                    <div class="col" >
+                                        <h4><b>Interests</b></h4>
+                                        <span style="display:flex"><h4 id="commentText">{{traveller.interests}}</h4></span>
+                                    </div>
+                                </div>      
+                            </div>      
+                        </div>  
+                    </ion-item>
+
+                </ion-list>
+            </ion-scroll>
+        </div>    
+        <div style="padding-left:5px;padding-right:5px" id="invitesRecvd" ng-show="isActive('interestsRecvd')">
+            <ion-scroll direction="y" style="height:{{scrollHeight}}" >
+                <ion-list  >
+                    <ion-item class="tripListItem  item-remove-animated item-avatar-right item-complex" collection-repeat="traveller in interestsRecvd"  >
+                        
+                        
+                        <div class="row" >
+                            
+                             <div class="col-40" style="padding-top:5px;padding-bottom:10px">
+                                <div class="row">
+                                    <div class="col" >
+                                        <h4 style="padding-bottom:10px">From: <span style="font-weight:bold;" >{{traveller.name}}</span></h4>
+                                        <img src="img/{{traveller.buddyAvatar}}"  alt="" />
+                                     </div>
+                                     </div>   
+                                    <div class="row">
+                                    <div class="col" >
+                                        <rating ng-model="traveller.avgRating" max="5"></rating>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-60" style="padding-left:0px;padding-top:5px;padding-bottom:5px">
+                                
+                                <div class="row" >
+                                    <div class="col" style="padding-bottom:10px">
+                                        <h4><b>Interests</b></h4>
+                                        <span style="display:flex"><h4 id="commentText">{{traveller.interests}}</h4></span>
+                                    </div>
+                                </div>    
+                                <div class="row" >
+                                    <div class="col" >
+                                        <h4><b>Message</b></h4>
+                                        <span style="display:flex"><h4 id="msgText">{{traveller.message}}</h4></span>
+                                    </div>
+                                </div>  
+                                 <div class="row" style="padding-top:25px">
+                                    <div class="col" >
+                                        <button class="button button-small button-balanced button-block">
+                                          Accept
+                                        </button>
+                                    </div>
+                                    <div class="col">       
+                                        <button class="button button-small button-assertive button-block">
+                                          Reject
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div>      
+                        </div>  
+                    </ion-item>
+
+                </ion-list>
+            </ion-scroll>
+        </div>    
+                <div style="padding-left:5px;padding-right:5px" id="invitesSent" ng-show="isActive('interestsSent')">
+            <ion-scroll direction="y" style="height:{{scrollHeight}}" >
+                <ion-list  >
+                    <ion-item class="tripListItem  item-remove-animated item-avatar-right item-complex" collection-repeat="traveller in interestsSent"  >
+                        
+                        
+                        <div class="row" >
+                            
+                             <div class="col-40" style="padding-top:5px;padding-bottom:10px">
+                                <div class="row">
+                                    <div class="col" >
+                                        <h4 style="padding-bottom:10px">To: <span style="font-weight:bold;" >{{traveller.name}}</span></h4>
+                                        <img src="img/{{traveller.buddyAvatar}}"  alt="" />
+                                     </div>
+                                     </div>   
+                                    <div class="row">
+                                    <div class="col" >
+                                        <rating ng-model="traveller.avgRating" max="5"></rating>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-60" style="padding-left:0px;padding-top:5px;padding-bottom:5px">
+                                
+                                <div class="row" >
+                                    <div class="col" style="padding-bottom:10px">
+                                        <h4><b>Interests</b></h4>
+                                        <span style="display:flex"><h4 id="commentText">{{traveller.interests}}</h4></span>
+                                    </div>
+                                </div>    
+                                <div class="row" >
+                                    <div class="col" >
+                                        <h4><b>Message</b></h4>
+                                        <span style="display:flex"><h4 id="msgText">{{traveller.message}}</h4></span>
+                                    </div>
+                                </div>  
+                                 <div class="row" style="padding-top:25px">
+                                    <div class="col" >
+                                        <button class="button button-small button-balanced button-block">
+                                          Pending
+                                        </button>
+                                    </div>
+                                </div> 
+                            </div>      
+                        </div>  
+                    </ion-item>
+
+                </ion-list>
+            </ion-scroll>
+        </div> 
+    </div>
+</ion-content>
 </ion-view>
